@@ -2,7 +2,7 @@ import React from "react";
 
 const OneCharTextBox = (props) => {
     return (
-        <input maxLength="1" type="text" className="oneCharTextBox"
+        <input maxLength="1" type="text" className="oneCharTextBox" autocomplete="off"
             id={props.id}
             value={props.value}
             ref={props.setInputRef}
