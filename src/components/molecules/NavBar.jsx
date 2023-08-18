@@ -29,16 +29,16 @@ return (
     <AppBar position="fixed" color="transparent" sx={{ top: 'auto', bottom: 0 }}>
         <Toolbar>
                 <Box sx={{ flexGrow: 0 }} />
-                <NavLink to='/Login'>
+                <NavLink to='/login'>
                     <IconButton>
                         <HomeTwoToneIcon />
                     </IconButton>
                 </NavLink>
                 <Box sx={{ flexGrow: 0.25 }} />
-                <NavLink to='/Search'>
+                <NavLink to='/search'>
                     <SearchTwoToneIcon />
                 </NavLink>
-            <NavLink to='/Seat'>
+            <NavLink to='/seat'>
                 <StyledFab color="" aria-label="add">
                         <Tooltip title="Seat Booking">
                             <AirlineSeatReclineNormalIcon />

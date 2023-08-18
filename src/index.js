@@ -1,9 +1,14 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
+
+/* Enable the interactive components such as modals, dropdowns, navbars, and more. */
+import 'flowbite';
+
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 import "./index.css";
 import SeatBooking from "./pages/SeatBooking";
 import EmailVerification from "./pages/EmailVerification";
@@ -30,11 +35,11 @@ const router = createBrowserRouter([
     element: <MonileVerification/>,
   },
   {
-    path: "/Search",
+    path: "/search",
     element: <Search />,
   },
   {
-    path: "/Login",
+    path: "/login",
     element: <Login />,
   },
 ]);
