@@ -1,0 +1,13 @@
+.searchBoxArea {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    stroke-width: 2px;
+}
+
+.verifyButton{
+    width: 10px;
+    position:absolute;
+    margin-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}

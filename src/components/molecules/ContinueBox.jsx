@@ -1,10 +1,10 @@
 import React from "react";
-import NavBar from "../components/molecules/NavBar";
+import googleLoginButton from "../atoms/GoogleLoginButton";
+
 const App = () => {
     return (
         <div className="App">  
             <googleLoginButton/>
-        <NavBar/>
         </div>
     );
 }
