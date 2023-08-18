@@ -1,7 +1,8 @@
 import React from "react";
+//import css file from ../app.css
+import "../App.css";
 
 import VerifSymbolImage from "../components/atoms/VerifSymbolImage";
-import TopBar from "../components/molecules/TopBar";  
 import VerifTextArea from "../components/molecules/VerifTextArea";
 import VerifDetails from "../components/molecules/VerifDetails";
 import VerifButton from "../components/atoms/VerifButton";
