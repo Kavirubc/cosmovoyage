@@ -10,6 +10,7 @@ import EmailVerification from "./pages/EmailVerification";
 import MonileVerification from "./pages/MobileVerification";
 import Main from "./pages/Main";
 import Search from "./pages/Search";
+import Login from "./pages/Login";
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/Search",
     element: <Search />,
+  },
+  {
+    path: "/Login",
+    element: <Login />,
   },
 ]);
 

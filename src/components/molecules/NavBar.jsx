@@ -29,7 +29,7 @@ return (
     <AppBar position="fixed" color="transparent" sx={{ top: 'auto', bottom: 0 }}>
         <Toolbar>
                 <Box sx={{ flexGrow: 0 }} />
-                <NavLink to='/'>
+                <NavLink to='/Login'>
                     <IconButton>
                         <HomeTwoToneIcon />
                     </IconButton>
