@@ -1,5 +1,6 @@
 import VerificationPage  from "./VerificationPage";
 import "../App.css";
+import NavBar from "../components/molecules/NavBar";
 
 var phone ="+9470 444 4444";
 
@@ -11,6 +12,7 @@ const MobileVerification = () => {
           <p>A  5 - digit code has been sent to</p>
           <p><b>{phone}</b> <a href="#">Change</a></p>
         </VerificationPage>
+        <NavBar />
       </div>
     );
 }

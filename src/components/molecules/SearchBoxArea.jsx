@@ -5,8 +5,12 @@ import SearchBox from "../atoms/SearchBox";
 const SearchBoxArea = () => {
     return (
         <div className="searchBoxArea">
-            <SearchBox/>
+            <div className="search1">
+                <SearchBox />
+            </div>
+            <div className="search2">
             <SearchBox />
+            </div>
         </div>
     );
     }

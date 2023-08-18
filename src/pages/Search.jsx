@@ -1,16 +1,18 @@
 import React from "react";
-import SearchBoxArea from "../components/molecules/SearchBoxArea";
 import NavBar from "../components/molecules/NavBar";
 
-const SeatBooking = () => {
+const Search =() => {
     return (
-    <div>
-            <SearchBoxArea/>
+        <div className="search">
+            <div className="body">
+                <h1 >Search Page</h1>
+            </div>
             <div className="NavBar">
                 <NavBar/>
             </div>
-    </div>   
+        </div>
+
     );
     }
 
-export default SeatBooking;
+export default Search;

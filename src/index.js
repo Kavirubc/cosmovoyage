@@ -7,21 +7,21 @@ import {
 import "./index.css";
 import SeatBooking from "./pages/SeatBooking";
 import EmailVerification from "./pages/EmailVerification";
-import NavBar from "./components/molecules/NavBar";
 import MonileVerification from "./pages/MobileVerification";
 import Main from "./pages/Main";
-import VerificationPage from "./pages/VerificationPage";
+import Search from "./pages/Search";
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <NavBar/>,
+    element: <Main/>,
   },
   {
-    path: "/Email", 
+    path: "/email", 
     element:<EmailVerification/>,},
   {
-    path: "/Seat",
+    path: "/seat",
     element: <SeatBooking />,
   },
   {
@@ -29,12 +29,8 @@ const router = createBrowserRouter([
     element: <MonileVerification/>,
   },
   {
-    path: "/Main",
-    element: <Main/>,
-  },
-  {
-    path: "/verify",
-    element: <VerificationPage />,
+    path: "/Search",
+    element: <Search />,
   },
 ]);
 
