@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @layer utilities {
-  .mobile-container {
+  .App {
     text-align: center;
   }
 
-  .mobile-container .App-logo {
+  .App .App-logo {
     height: 40vmin;
     pointer-events: none;
   }
@@ -22,7 +22,7 @@
     background-color: #fff !important;
   }
 
-  .mobile-container .App-header {
+  .App .App-header {
     background-color: #282c34;
     min-height: 100vh;
     display: flex;
@@ -33,7 +33,7 @@
     color: white;
   }
 
-  .mobile-container .App-link {
+  .App .App-link {
     color: #61dafb;
   }
 
