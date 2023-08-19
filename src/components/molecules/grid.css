@@ -13,3 +13,67 @@
 .grid-item {
     text-align: center;
 }
+/************************************************************************************/
+:root{
+    --main-gradient: linear-gradient(120deg, #8C54FB 0%, #CE4F51 100%);
+    --theme-color-1: #8C54FB;
+    --theme-color-2: #CE4F51;
+}
+
+.tour-seat-container{
+    display: block;
+}
+
+input[type=checkbox].seat{
+    margin: 0px;
+    visibility: hidden;
+    border-radius: 8px;
+    width: 6vw;
+    height: 6vh;
+}
+
+input[type=checkbox].seat.booked{
+    pointer-events: none;
+    background-color: #A4A7A7;
+}
+
+input[type=checkbox].seat::before{
+    content: "";
+    visibility: visible;
+    background: url("/public/images/cryopod-icon.svg") no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: block;
+    border-radius: 8px;
+    background-color: #85CACE;
+    width: 6vw;
+    height: 6vh;
+}
+
+input[type=checkbox].seat:checked::before{
+    background-color: #44D264;
+}
+
+input[type=checkbox].seat.booked::before{
+    background-color: #A4A7A7;
+}
+
+
+input[type=checkbox].seat:hover::before{
+    outline: none;
+    width: calc(6vw - 4px);
+    height: calc(6vh - 4px);
+    background-size: 36px, auto, auto;
+    border: double 2px transparent;
+    background-image: url("/public/images/cryopod-icon.svg"), linear-gradient(#85CACE, #85CACE), var(--main-gradient);
+    background-origin:  border-box, border-box;
+    background-clip: padding-box, padding-box, border-box;
+}
+
+input[type=checkbox].seat:checked:hover::before{
+    background-image: url("/public/images/cryopod-icon.svg"), linear-gradient(#44D264, #44D264), var(--main-gradient);
+}
+
+input[type=checkbox].seat.booked:hover::before{
+    background-image: url("/public/images/cryopod-icon.svg"), linear-gradient(#A4A7A7, #A4A7A7), var(--main-gradient);
+}
