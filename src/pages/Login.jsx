@@ -54,6 +54,9 @@ const Login = () => {
       })
       .catch(function (error) {
 
+        document.querySelector("#username-error").innerHTML = "";
+        document.querySelector("#password-error").innerHTML = "";
+
         let output = error.response.data;
 
         ErrorManager(output);
@@ -65,7 +68,7 @@ const Login = () => {
     <div>
 
       <section className="bg-gray-50 dark:bg-gray-900">
-        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
           <a
             href="/"
             className="flex items-center mb-6 mt-20 text-2xl font-semibold text-gray-900 dark:text-white"
