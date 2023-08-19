@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 @layer utilities {
-  .App {
+  .mobile-container {
     text-align: center;
   }
 
-  .App-logo {
+  .mobile-container .App-logo {
     height: 40vmin;
     pointer-events: none;
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
+    .mobile-container .App-logo {
       animation: App-logo-spin infinite 20s linear;
     }
   }
@@ -22,7 +22,7 @@
     background-color: #fff !important;
   }
 
-  .App-header {
+  .mobile-container .App-header {
     background-color: #282c34;
     min-height: 100vh;
     display: flex;
@@ -33,7 +33,7 @@
     color: white;
   }
 
-  .App-link {
+  .mobile-container .App-link {
     color: #61dafb;
   }
 
@@ -85,6 +85,10 @@
 
   .verifLogo{
     margin-top:5vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 5vh;
   }
 
   .oneCharTextBox{
