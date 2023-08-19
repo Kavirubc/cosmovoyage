@@ -1,0 +1,15 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+    border-radius: 12px;
+    grid-template-columns: 1px 2px 3x 4x;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    justify-content: center;
+
+
+}
+
+.grid-item {
+    text-align: center;
+}
