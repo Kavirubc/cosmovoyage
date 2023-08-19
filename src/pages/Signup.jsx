@@ -16,11 +16,11 @@ const SignUp = () => {
     event.preventDefault();
 
     /* 
-    * Send a POST request for login
+    * Send a POST request for signup
     */
     axios({
       method: 'post',
-      url: 'https://cosmovoyage-api.krag.lk/api/v1/user/login',
+      url: process.env.REACT_APP_API + '/api/v1/user/register',
       data: {
         username: username,
         password: password
@@ -42,7 +42,7 @@ const SignUp = () => {
           */
 
           // Encrypt the token and store in session storage
-          sessionStorage.setItem("token", encryptData(token));
+          sessionStorage.setItem(process.env.REACT_APP_AUTH_TOKEN_NAME, encryptData(token));
 
           document.querySelector("#username-error").innerHTML = "";
           document.querySelector("#password-error").innerHTML = "";

@@ -1,4 +1,6 @@
 const ErrorManager = (response) => {
+
+    console.log(response);
   
     if (response.success === false) {
 
@@ -16,8 +18,11 @@ const ErrorManager = (response) => {
         } else {
             // a lot of text fileds exists
             //console.log(errors);
-            errors.forEach(error => {
-                //console.log("TextField : ");
+
+            const keys = Object.keys(errors);
+
+            keys.forEach((key, index) => {
+                console.log(`${key}: ${errors[key]}`);
             });
         }
     }

@@ -10,6 +10,7 @@ import ErrorManager from '../utils/ErrorManager';
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [remember, setRemember] = useState(false);
 
 
   const handleLogin = (event) => {
@@ -20,7 +21,7 @@ const Login = () => {
     */
     axios({
       method: 'post',
-      url: 'https://cosmovoyage-api.krag.lk/api/v1/user/login',
+      url: process.env.REACT_APP_API + '/api/v1/user/login',
       data: {
         username: username,
         password: password
@@ -35,9 +36,16 @@ const Login = () => {
           // User login token
           let token = output.data.token;
 
-          // Encrypt the token and store in session storage
-          sessionStorage.setItem("token", encryptData(token));
-
+          if (remember === true) {
+            localStorage.setItem("remember", true);
+            // Encrypt the token and store in local storage
+            localStorage.setItem(process.env.REACT_APP_AUTH_TOKEN_NAME, encryptData(token));
+          } else {
+            localStorage.setItem("remember", false);
+            // Encrypt the token and store in session storage
+            sessionStorage.setItem(process.env.REACT_APP_AUTH_TOKEN_NAME, encryptData(token));
+          }
+          
           document.querySelector("#username-error").innerHTML = "";
           document.querySelector("#password-error").innerHTML = "";
 
@@ -121,7 +129,9 @@ const Login = () => {
                         aria-describedby="remember"
                         type="checkbox"
                         className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                        required=""
+                        checked={remember}
+                        onChange={(e) => setRemember(!remember)}
+                        required
                       />
                     </div>
                     <div className="ml-3 text-sm">
