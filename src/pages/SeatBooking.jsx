@@ -2,6 +2,7 @@ import React from "react";
 import SearchBoxArea from "../components/molecules/SearchBoxArea";
 import NavBar from "../components/molecules/NavBar";
 import TopBar from "../components/molecules/TopBar";
+import gridItems from "../components/molecules/grid_1.jsx";
 
 const SeatBooking = () => {
     return (
@@ -11,6 +12,9 @@ const SeatBooking = () => {
             </div></TopBar>
             <div className="searchBoxArea">
                 <SearchBoxArea />
+            </div>
+            <div className="grid">
+                <gridItems/>
             </div>
             <div className="NavBar">
                 <NavBar/>
