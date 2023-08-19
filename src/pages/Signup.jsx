@@ -7,21 +7,20 @@ import { Link } from "react-router-dom";
 import { encryptData } from '../utils/CryptoJS';
 import ErrorManager from '../utils/ErrorManager';
 
-const Login = () => {
+const SignUp = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [remember, setRemember] = useState(false);
 
 
   const handleLogin = (event) => {
     event.preventDefault();
 
     /* 
-    * Send a POST request for login
+    * Send a POST request for signup
     */
     axios({
       method: 'post',
-      url: process.env.REACT_APP_API + '/api/v1/user/login',
+      url: process.env.REACT_APP_API + '/api/v1/user/register',
       data: {
         username: username,
         password: password
@@ -36,16 +35,15 @@ const Login = () => {
           // User login token
           let token = output.data.token;
 
-          if (remember === true) {
-            localStorage.setItem("remember", true);
-            // Encrypt the token and store in local storage
-            localStorage.setItem(process.env.REACT_APP_AUTH_TOKEN_NAME, encryptData(token));
-          } else {
-            localStorage.setItem("remember", false);
-            // Encrypt the token and store in session storage
-            sessionStorage.setItem(process.env.REACT_APP_AUTH_TOKEN_NAME, encryptData(token));
-          }
-          
+          /*  
+          *
+          * If the user has selected the `Remember me` then put it to `localStorage.
+          *           
+          */
+
+          // Encrypt the token and store in session storage
+          sessionStorage.setItem(process.env.REACT_APP_AUTH_TOKEN_NAME, encryptData(token));
+
           document.querySelector("#username-error").innerHTML = "";
           document.querySelector("#password-error").innerHTML = "";
 
@@ -80,7 +78,7 @@ const Login = () => {
           <div className="w-full sm:bg-white rounded-lg shadow-none sm:shadow dark:border md:mt-0 mb-20 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                Log in to your account
+                Sign up to your account
               </h1>
               <form className="space-y-4 md:space-y-6" action="#">
                 <div>
@@ -129,9 +127,7 @@ const Login = () => {
                         aria-describedby="remember"
                         type="checkbox"
                         className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                        checked={remember}
-                        onChange={(e) => setRemember(!remember)}
-                        required
+                        required=""
                       />
                     </div>
                     <div className="ml-3 text-sm">
@@ -155,15 +151,15 @@ const Login = () => {
                   onClick={handleLogin}
                   className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
-                  Log in
+                  Sign up
                 </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Don’t have an account yet?&nbsp;&nbsp;
+                  Already have an account?&nbsp;&nbsp;
                   <Link
-                    to="/signup"
+                    to="/login"
                     className="font-medium text-blue-600 hover:underline dark:text-blue-500"
                   >
-                    Sign up
+                    Log in
                   </Link>
                 </p>
               </form>
@@ -176,4 +172,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
