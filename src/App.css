@@ -166,4 +166,10 @@
   .searchbox3 .css-1wuilmg-MuiAutocomplete-root{
     width: 100%;
   }
+
+  .verifyButton{
+        width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
