@@ -47,76 +47,85 @@ const SeatBooking = (props) => {
       
     return (
         <div className="App">
-            <TopBar> <div className="titleTopBar">
-                <h1>Seat</h1>
-            </div></TopBar>
-            <div className="searchBoxArea">
-                <SearchBoxArea />
+            <TopBar>
+                <div className="titleTopBar h-full flex justify-center align-middle">
+                    <h2 className="text-sm text-gray-200 font-normal pt-[3px] h-min">Flight Booking</h2>
+                </div>
+            </TopBar>
+
+            <div className="w-full flex justify-center align-middle">
+
+                <div className="max-w-screen-md">
+
+                    <div className="searchBoxArea">
+                        <SearchBoxArea />
+                    </div>
+
+                    <div id="tour-main-container" className="w-fit">
+
+                        <div className="tour-container">
+                            <div className="tour-detail-container">
+                                <div className="tour-title">Mars Spaceline</div>
+                                <div className="tour-details">
+                                    <div className="tour-place">Earth</div>
+                                    <div className="tour-hr"><hr /></div>
+                                    <div className="tour-place">Moon</div>
+                                    <div className="tour-time">00:15 <br /> 26 Aug 2123</div>
+                                    <div className="tour-stops"></div>
+                                    <div className="tour-time">00:15 <br /> 26 Aug 2126</div>
+                                </div>
+                                <GridItems id="t0" seatAvailability={[0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0]} />
+                            </div>
+                            <div className="tour-btn-container">
+                                <button className="tour-btn-sm material-symbols-outlined">
+                                    expand_more
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="tour-container">
+                            <div className="tour-detail-container">
+                                <div className="tour-title">Mars Spaceline</div>
+                                <div className="tour-details">
+                                    <div className="tour-place">Earth</div>
+                                    <div className="tour-hr"><hr /></div>
+                                    <div className="tour-place">Moon</div>
+                                    <div className="tour-time">00:15 <br /> 26 Aug 2123</div>
+                                    <div className="tour-stops"></div>
+                                    <div className="tour-time">00:15 <br /> 26 Aug 2126</div>
+                                </div>
+                                <GridItems id="t1" seatAvailability={[0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0]} />
+                            </div>
+                            <div className="tour-btn-container">
+                                <button className="tour-btn-sm material-symbols-outlined">
+                                    expand_more
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="tour-container">
+                            <div className="tour-detail-container">
+                                <div className="tour-title">Mars Spaceline</div>
+                                <div className="tour-details">
+                                    <div className="tour-place">Earth</div>
+                                    <div className="tour-hr"><hr /></div>
+                                    <div className="tour-place">Moon</div>
+                                    <div className="tour-time">00:15 <br /> 26 Aug 2123</div>
+                                    <div className="tour-stops"></div>
+                                    <div className="tour-time">00:15 <br /> 26 Aug 2126</div>
+                                </div>
+                                <GridItems id="t2" seatAvailability={[1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0]} />
+                            </div>
+                            <div className="tour-btn-container">
+                                <button className="tour-btn-sm material-symbols-outlined">
+                                    expand_more
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
-
-            <div id="tour-main-container">
-
-                <div className="tour-container">
-                    <div className="tour-detail-container">
-                        <div className="tour-title">Mars Spaceline</div>
-                        <div className="tour-details">
-                            <div className="tour-place">Earth</div>
-                            <div className="tour-hr"><hr/></div>
-                            <div className="tour-place">Moon</div>
-                            <div className="tour-time">00:15 <br/> 26 Aug 2123</div>
-                            <div className="tour-stops"></div>
-                            <div className="tour-time">00:15 <br/> 26 Aug 2126</div>
-                        </div>
-                        <GridItems id = "t0" seatAvailability = {[0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0]}/>
-                    </div>
-                    <div className="tour-btn-container">
-                        <button className="tour-btn-sm material-symbols-outlined">
-                            expand_more
-                        </button>
-                    </div>
-                </div>
-
-                <div className="tour-container">
-                    <div className="tour-detail-container">
-                        <div className="tour-title">Mars Spaceline</div>
-                        <div className="tour-details">
-                            <div className="tour-place">Earth</div>
-                            <div className="tour-hr"><hr/></div>
-                            <div className="tour-place">Moon</div>
-                            <div className="tour-time">00:15 <br/> 26 Aug 2123</div>
-                            <div className="tour-stops"></div>
-                            <div className="tour-time">00:15 <br/> 26 Aug 2126</div>
-                        </div>
-                        <GridItems id = "t1" seatAvailability = {[0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0]}/>
-                    </div>
-                    <div className="tour-btn-container">
-                        <button className="tour-btn-sm material-symbols-outlined">
-                            expand_more
-                        </button>
-                    </div>
-                </div>
-
-                <div className="tour-container">
-                    <div className="tour-detail-container">
-                        <div className="tour-title">Mars Spaceline</div>
-                        <div className="tour-details">
-                            <div className="tour-place">Earth</div>
-                            <div className="tour-hr"><hr/></div>
-                            <div className="tour-place">Moon</div>
-                            <div className="tour-time">00:15 <br/> 26 Aug 2123</div>
-                            <div className="tour-stops"></div>
-                            <div className="tour-time">00:15 <br/> 26 Aug 2126</div>
-                        </div>
-                        <GridItems id = "t2" seatAvailability = {[1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0]}/>
-                    </div>
-                    <div className="tour-btn-container">
-                        <button className="tour-btn-sm material-symbols-outlined">
-                            expand_more
-                        </button>
-                    </div>
-                </div>
-            </div>
-
 
             <div className="NavBar">
                 <NavBar/>

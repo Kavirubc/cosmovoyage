@@ -35,7 +35,7 @@ const router = createBrowserRouter([
     errorElement: <Error />,
   },
   {
-    path: "/seat",
+    path: "/flight-booking",
     element: <SeatBooking />,
     errorElement: <Error />,
   },

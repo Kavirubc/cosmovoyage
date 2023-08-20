@@ -10,7 +10,7 @@ export default function FreeSoloCreateOption() {
 
     return (
         <div className="searchbox">
-            <div className="searchbox1">
+            <div className="searchbox1 w-fit">
                 <Autocomplete
                     size="large"
                     value={value}
