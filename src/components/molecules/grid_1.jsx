@@ -16,8 +16,6 @@ const GridItems = (props) => {
     }, [props.seatAvailability, props.id]);
 
     useEffect(() => {
-        console.log(seatAvailability);
-        console.log(id);
         let seatList = document.getElementById(id).getElementsByClassName("seat");
         for (let i = 0; i < seatAvailability.length; i++) {
         if (seatAvailability[i] === 0) {
@@ -143,7 +141,7 @@ const GridItems = (props) => {
                 </div>
 
             </div>
-
+            <input type="submit" className="tour-submit" value="Select Seats"/>
         </div>
     );
 }

@@ -3,7 +3,7 @@
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
     border-radius: 12px;
     grid-template-columns: 1px 2px 3x 4x;
-    grid-column-gap: 10px;
+    grid-column-gap: 6px;
     grid-row-gap: 10px;
     justify-content: center;
 
@@ -61,8 +61,6 @@ input[type=checkbox].seat.booked::before{
 
 input[type=checkbox].seat:hover::before{
     outline: none;
-    width: calc(6vw - 4px);
-    height: calc(6vh - 4px);
     background-size: 36px, auto, auto;
     border: double 2px transparent;
     background-image: url("/public/images/cryopod-icon.svg"), linear-gradient(#85CACE, #85CACE), var(--main-gradient);
