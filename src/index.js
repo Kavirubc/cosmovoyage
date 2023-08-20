@@ -2,7 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 
 /* Enable the interactive components such as modals, dropdowns, navbars, and more. */
-import 'flowbite';
+//import 'flowbite';
 
 import {
   createBrowserRouter,

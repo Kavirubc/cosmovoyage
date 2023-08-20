@@ -9,7 +9,7 @@ import VerifButton from "../components/atoms/VerifButton";
 
 const VerificationPage = (props) => {
     return (
-        <div className="container">
+        <div className="container mx-auto">
             {/*<TopBar align={props.titleAlign}>Verification</TopBar>*/}
             <VerifSymbolImage type={props.imageType}/>
             <VerifDetails>{props.children}</VerifDetails>

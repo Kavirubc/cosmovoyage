@@ -58,7 +58,7 @@ const Login = () => {
           console.log("User Logged In sucessfull!");
 
           setTimeout(() => {
-            return navigate("/");
+            return navigate(process.env.REACT_APP_AUTH_REDIRECT);
           }, "3000");
         }
       })

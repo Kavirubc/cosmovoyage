@@ -75,7 +75,7 @@ const SignUp = () => {
           console.log("User account created sucessfull!");
 
           setTimeout(() => {
-            return navigate("/");
+            return navigate(process.env.REACT_APP_AUTH_REDIRECT);
           }, "3000");
         }
       })

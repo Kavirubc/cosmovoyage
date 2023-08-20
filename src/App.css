@@ -147,4 +147,23 @@
     background-clip: padding-box, border-box;  
   }
 
+  #destination{
+    box-shadow: none !important;
+  }
+
+  .css-1wuilmg-MuiAutocomplete-root {
+    width: -webkit-fill-available !important;
+  }
+
+  .searchbox1 .css-1wuilmg-MuiAutocomplete-root{
+    width: 100%;
+  }
+
+  .searchbox2 .css-1wuilmg-MuiAutocomplete-root{
+    width: 100%;
+  }
+
+  .searchbox3 .css-1wuilmg-MuiAutocomplete-root{
+    width: 100%;
+  }
 }
