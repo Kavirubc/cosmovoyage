@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import SearchBoxArea from "../components/molecules/SearchBoxArea";
 import NavBar from "../components/molecules/NavBar";
 import TopBar from "../components/molecules/TopBar";
-import GridItems from "../components/molecules/Grid_1.jsx";
+import GridItems from "../components/molecules/grid_1";
 import "./pages.css"
 
 const SeatBooking = (props) => {

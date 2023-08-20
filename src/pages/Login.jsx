@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Utilities
 import { encryptData } from '../utils/CryptoJS';
@@ -12,6 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [remember, setRemember] = useState(false);
 
+  const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -45,17 +46,31 @@ const Login = () => {
             // Encrypt the token and store in session storage
             sessionStorage.setItem(process.env.REACT_APP_AUTH_TOKEN_NAME, encryptData(token));
           }
-          
+
           document.querySelector("#username-error").innerHTML = "";
           document.querySelector("#password-error").innerHTML = "";
 
+          document.getElementById("validation-error").classList.remove("flex");
+          document.getElementById("validation-error").classList.add("hidden");
+          document.getElementById("user-account-login").classList.remove("hidden");
+          document.getElementById("user-account-login").classList.add("flex");
+
           console.log("User Logged In sucessfull!");
+          
+          setTimeout(() => {
+            return navigate("/");
+          }, "3000");
         }
       })
       .catch(function (error) {
 
         document.querySelector("#username-error").innerHTML = "";
         document.querySelector("#password-error").innerHTML = "";
+
+        document.getElementById("validation-error").classList.remove("hidden");
+        document.getElementById("validation-error").classList.add("flex");
+        document.getElementById("user-account-login").classList.remove("flex");
+        document.getElementById("user-account-login").classList.add("hidden");
 
         let output = error.response.data;
 
@@ -97,6 +112,7 @@ const Login = () => {
                     type="text"
                     name="username"
                     id="username"
+                    autocomplete="username"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Username"
                     value={username}
@@ -116,6 +132,7 @@ const Login = () => {
                     type="password"
                     name="password"
                     id="password"
+                    autocomplete="current-password"
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     value={password}
@@ -174,6 +191,94 @@ const Login = () => {
           </div>
         </div>
       </section>
+
+      <div
+        id="user-account-login"
+        className="fixed top-4 right-4 hidden items-center p-4 mb-4 ml-4 border border-green-300 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 w-fit"
+        role="alert"
+      >
+        <svg
+          className="flex-shrink-0 w-4 h-4"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+        </svg>
+        <span className="sr-only">Info</span>
+        <div className="ml-3 text-sm font-medium">
+          Login successful
+        </div>
+        &nbsp;&nbsp;
+        <button
+          type="button"
+          className="ml-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700"
+          data-dismiss-target="#user-account-login"
+          aria-label="Close"
+          id="user-account-login-close-bt"
+        >
+          <span className="sr-only">Close</span>
+          <svg
+            className="w-3 h-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 14"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div
+        id="validation-error"
+        className="fixed top-4 right-4 hidden items-center p-4 mb-4 border border-red-300 text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          className="flex-shrink-0 w-4 h-4"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+        </svg>
+        <span className="sr-only">Info</span>
+        <div className="ml-3 text-sm font-medium">
+          Validation error. Check the information provided.
+        </div>
+        <button
+          type="button"
+          className="ml-auto -mx-1.5 -my-1.5 bg-red-50 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-gray-700"
+          data-dismiss-target="#alert-2"
+          aria-label="Close"
+        >
+          <span className="sr-only">Close</span>
+          <svg
+            className="w-3 h-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 14"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+            />
+          </svg>
+        </button>
+      </div>
 
     </div>
   );

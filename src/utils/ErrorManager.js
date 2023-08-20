@@ -1,6 +1,6 @@
 const ErrorManager = (response) => {
 
-    console.log(response);
+    // console.log(response);
   
     if (response.success === false) {
 
@@ -13,6 +13,7 @@ const ErrorManager = (response) => {
 
         keys.forEach((key, index) => {
             document.querySelector("#" + key + "-error").innerHTML = errors[key];
+            // console.log(key + " - " + errors[key]);
         });
 
         } else {
@@ -22,7 +23,7 @@ const ErrorManager = (response) => {
             const keys = Object.keys(errors);
 
             keys.forEach((key, index) => {
-                console.log(`${key}: ${errors[key]}`);
+                // console.log(`${key}: ${errors[key]}`);
             });
         }
     }
